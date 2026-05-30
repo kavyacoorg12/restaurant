@@ -7,7 +7,7 @@ const app=express()
 import restaurantRouter from './src/interface/route/restaurants'
 import { errorMiddleware } from './src/interface/middleware/errorMiddleware'
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: process.env.CLIENT_URL,
   credentials: true
 }))
 
