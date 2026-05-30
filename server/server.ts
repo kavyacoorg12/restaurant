@@ -1,11 +1,10 @@
-import express, { NextFunction, Request, Response } from 'express'
+import express from 'express'
 import dotenv from "dotenv"
 import { connectDB } from './src/infrastructure/database/connectDB'
 dotenv.config()
 import cors from 'cors'
 const app=express()
 import restaurantRouter from './src/interface/route/restaurants'
-import { AppError } from './src/domain/errors/appError'
 import { errorMiddleware } from './src/interface/middleware/errorMiddleware'
 app.use(cors({
   origin: 'http://localhost:5173',

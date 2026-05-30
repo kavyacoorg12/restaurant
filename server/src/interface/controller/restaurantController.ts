@@ -8,7 +8,6 @@ import { restaurantMessages } from "../../shared/constants/RestaurantMessage";
 import { AppError } from "../../domain/errors/appError";
 import { generalMessages } from "../../shared/constants/generalMessage";
 import { IGetSignedUploadUrlsUseCase } from "../../application/interface/IGetSignedUrlUseCase";
-import { Error } from "mongoose";
 export class RestaurantController {
   constructor(
     private _getAllRestaurantUseCase: IGetAllRestaurantsUseCase,

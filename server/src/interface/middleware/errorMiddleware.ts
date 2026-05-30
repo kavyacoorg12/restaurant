@@ -5,7 +5,7 @@ export const errorMiddleware = (
   err: Error,
   req: Request,
   res: Response,
-  next: NextFunction
+  _next: NextFunction
 ) => {
   if (err instanceof AppError) {
     return res.status(err.statusCode).json({
@@ -18,4 +18,5 @@ export const errorMiddleware = (
     success: false,
     message: err.message || "Internal server error",
   })
+  
 }

@@ -34,8 +34,7 @@ export class RestaurantRepository implements IRestaurantRepository {
       const nextDoc = docs.pop();
       nextCursor = nextDoc!._id.toString();
     }
-    {
-    }
+    
     return {
       restaurants: docs.map((doc) => this.map(doc)),
       nextCursor: nextCursor,
