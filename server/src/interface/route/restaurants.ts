@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { restaurantsController } from "../../infrastructure/config/di";
-import { restaurantInputValidation } from "../validator/restaurants";
+import { restaurantInputValidation, restaurantUpdateValidation } from "../validator/restaurants";
 import { validateSignedUrlRequest } from "../validator/imageValidator";
 const router = Router();
 
@@ -10,7 +10,7 @@ router.delete(
   restaurantsController.deleteRestaurants,
 );
 router.patch(
-  "/restaurants/:restaurantId",
+  "/restaurants/:restaurantId",restaurantUpdateValidation,
   restaurantsController.updateRestaurants,
 );
 router.post(
